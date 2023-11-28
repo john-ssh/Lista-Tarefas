@@ -18,5 +18,5 @@ Este é um projeto para a final da disciplina de **Desenvolvimento Web II** como
 
 <div><br></div>
 
-> [!NOTE]
-> As informações do banco de dados precisam ser inseridas em um arquivo `.env`! Utilize o arquivo `.env.example` como base para a criação do arquivo `.env` para que a conexão do banco seja feita sem problemas. 
+<!-- > [!NOTE] -->
+<!-- > As informações do banco de dados precisam ser inseridas em um arquivo `.env`! Utilize o arquivo `.env.example` como base para a criação do arquivo `.env` para que a conexão do banco seja feita sem problemas.  -->
