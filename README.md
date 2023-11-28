@@ -11,7 +11,7 @@
 Este é um projeto para a final da disciplina de **Desenvolvimento Web II** como requisito principal para aprovação no curso de _Licenciatura em Ciências da Computação_ do IF Baiano de Senhor do Bonfim.
 
 ## Execução do projeto
-1. Clone o projeto executando o comando `git clone https://github.com/AnneCosta/Lista-Tarefas.git` no seu terminal
+1. Clone o projeto executando o comando `git clone https://github.com/john-ssh/Lista-Tarefas` no seu terminal
 2. Ao entrar na pasta com `cd Lista-Tarefas`, execute o comando `yarn` ou `yarn install` para instalar as dependências do projeto
 3. Rode o servidor com `node server.js`
 4. Vá ao link `https://localhost:3000/` para utilizar a aplicação
