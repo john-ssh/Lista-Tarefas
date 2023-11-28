@@ -12,7 +12,12 @@ const List = sequelize.define('todoList', {
 	task: {
 		type: DataTypes.STRING,
 		allowNull: false,
+	},
+
+	completed: {
+		type: DataTypes.BOOLEAN,
+		defaultValue: false,
 	}
 });
 
-export default List;
+export default List

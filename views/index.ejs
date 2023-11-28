@@ -32,6 +32,18 @@
 								<%= task[i].task %> 
 							</span>
 						</section>
+						<section class="_check">
+							<form action="/complete/<%= task[i].id %>" method="post">
+								<input 
+									type="checkbox" 
+									name="completed" 
+									id="completed"
+									class="<%= task[i].completed ? '.active' : '' %>"
+									<%= task[i].completed ? 'checked' : '' %>
+									onchange="this.form.submit()"
+								/>
+							</form>
+						</section>
 						<section class="_actions">
 							<a href="/edit/<%= task[i].id %>" class="_edit"><i class="fa-solid fa-pen-to-square"></i></a>
 							<a href="/delete/<%= task[i].id %>" class="_delete"><i class="fa-solid fa-trash"></i></a>

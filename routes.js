@@ -5,8 +5,8 @@ const routes = express.Router();
 
 routes.get("/", (req, res) => {
     todoModel.findAll({
-		attributes: ["id", "task"],
-	})
+        attributes: ["id", "task", "completed"]
+    })
 	.then((result) => res.render('index', {task: result}))
 	.catch(err => console.error(err))
 })
@@ -19,6 +19,21 @@ routes.post("/", async (req, res) => {
 	.catch(err => console.error(err))
 })
 
+routes.post("/complete/:id", async (req,res) => {
+    const taskId = req.params.id
+    try {
+        const task = await todoModel.findByPk(taskId);
+        if (task) {
+            task.completed = !task.completed
+            await task.save()
+        }
+        res.redirect("/")
+    } catch (error) {
+        console.error(error)
+        res.status(500).send('Internal Server Error')
+    }
+})
+
 routes.route("/edit/:id")
     .get(async (req, res) => {
         let id = req.params.id
@@ -29,10 +44,12 @@ routes.route("/edit/:id")
     .post(async (req, res) => {
         let id = req.params.id
         let task = req.body.task
+        let completed = req.body.completed
         const todo = await todoModel.findByPk(id)
 
         await todo.update({
-            task: task
+            task: task,
+            completed: completed
         })
 
         res.redirect('/')
