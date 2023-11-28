@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+	border: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style-type: none;
+	font-family: 'Roboto', sans-serif;
+}
+
+:root{
+	--default-color: #01161E;
+	--default-bg-color: #a7baca;
+	--default-size: .3rem;
+
+	--button-bg-color: #114B5F;
+	--button-bg-hover: #3c6c7c;
+	--button-color: #fff;
+
+	--action-bg-delete: #E63946;
+	--action-bg-delete-hover: #eb6c77;
+	--action-bg-edit: #eb7a38; 
+	--action-bg-edit-hover: #F79256;
+
+}
+
+body{
+	height: 100vh;
+	background-color: var(--default-bg-color);
+}
+
+._header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+._main {
+	display: flex;
+	flex-flow: column wrap;
+	max-width: 40rem;
+	margin: auto;
+}
+
+._main p {
+	font-weight: 300;
+	font-size: 1.2rem;
+}
+
+._form{
+	display: grid;
+	grid-template-areas:
+		"inp btn"
+		". ."
+		". .";
+	grid-template-columns: 4fr 1fr;
+	gap: .5rem;
+	color: var(--default-color);
+}
+
+._form input {
+	padding-left: .5rem;
+	border-radius: var(--default-size);
+	margin: .6rem 0;
+	grid-area: inp;
+	font-size: 1rem;
+}
+
+._form input:focus-visible {
+	outline: 2px solid var(--button-bg-color);
+}
+
+._form button {
+	padding: .8rem;
+	border-radius: var(--default-size);
+	margin: .6rem 0;
+	background-color: var(--button-bg-color);
+	color: var(--button-color);
+	transition: all 0.2s ease-in;
+	grid-area: btn;
+}
+
+._form button:hover {
+	background-color: var(--button-bg-hover);
+	transition: all 0.3s ease-in;
+}
+
+._content li {
+	display: grid;
+	grid-template-areas: 
+		"task act"
+	;
+	grid-template-columns: 6fr 1fr;
+	gap: .5rem;
+	margin: var(--default-size) 0;
+	padding: .5rem .7rem;
+	background-color: #c0d2e0;
+	border-radius: var(--default-size);
+}
+
+._task{
+	display: flex;
+	grid-area: task;
+	align-items: center;
+}
+
+._task .id {
+	margin-right: .6rem;
+	font-weight: 700;
+}
+
+._task .task {
+	width: 100%;
+}
+
+._actions{
+	display: grid;
+	grid-area: act;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--default-size);
+	justify-content: center;
+	text-align: center;
+}
+
+._content a {
+	text-decoration: none;
+	color: var(--button-color);
+	border-radius: var(--default-size);
+	padding: .4rem;
+}
+
+a._delete {
+	background-color: var(--action-bg-delete);
+}
+
+a._delete:hover {
+	background-color: var(--action-bg-delete-hover);
+}
+
+a._edit {
+	background-color: var(--action-bg-edit);
+}
+
+a._edit:hover {
+	background-color: var(--action-bg-edit-hover);
+}

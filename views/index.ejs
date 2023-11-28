@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/style.css">
+	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+	<title>Lista de Tarefas</title>
+	<script src="https://kit.fontawesome.com/0f1f92aeb9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header class="_header">
+		<h1>Lista de Tarefas</h1>
+	</header>
+	<main class="_main">
+		<p>Insira aqui a sua tarefa</p>
+		<section>
+			<form action="/" method="post" class="_form">
+				<input type="text" name="task" id="task" placeholder="Ex.: Programar, Ler livros, etc.">
+				<button type="submit" id="btn">Adicionar</button>
+			</form>
+		</section>
+		<section class="_content">
+			<ul>
+				<% for(let i=0; i < task.length; i++){ %>
+					<li>
+						<section class="_task">
+							<span class="id">
+								<%= task[i].id %>.
+							</span>
+							<span class="task">
+								<%= task[i].task %> 
+							</span>
+						</section>
+						<section class="_actions">
+							<a href="/edit/<%= task[i].id %>" class="_edit"><i class="fa-solid fa-pen-to-square"></i></a>
+							<a href="/delete/<%= task[i].id %>" class="_delete"><i class="fa-solid fa-trash"></i></a>
+						</section>
+					</li>
+				<% } %>
+			</ul>
+		</section>
+	</main>
+</body>
+</html>
