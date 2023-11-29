@@ -3,6 +3,7 @@ import todoModel from "./src/models/TodoModel.js"
 
 const routes = express.Router();
 
+// Methods for CRUD
 routes.get("/", (req, res) => {
     todoModel.findAll({
         attributes: ["id", "task", "completed"]
